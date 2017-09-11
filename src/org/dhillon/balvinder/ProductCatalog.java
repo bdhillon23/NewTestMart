@@ -3,6 +3,7 @@ package org.dhillon.balvinder;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import org.dhillon.balvinder.business.ProductService;
@@ -10,7 +11,7 @@ import org.dhillon.balvinder.business.ProductService;
 @WebService
 public class ProductCatalog {
 	ProductService productService=new ProductService();
-	
+	@WebMethod(exclude=true)
 	public List<String> getProductCategories(){ 
 			
 		return productService.getProductCategories();
